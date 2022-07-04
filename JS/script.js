@@ -10,31 +10,33 @@ var app = new Vue ({
     
     el: '#root',
     data: {
-        randomEmail: null,
+        
         arrayEmail: []
     },
     methods: {
         newEmailRandom(){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail',
-                {
-                    params: {
-                        items: 10
-                     }
+            for(let i = 0; i < 10; i ++){
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then((response) => {
+                    
+                        let thisEmail = [i]
+                        thisEmail = response.data.response
+                        console.log(response.data.response)
+                        this.arrayEmail.push(thisEmail)
+    
                 }
-
-            )
-            .then((response) => {
-                this.randomEmail = response.data.response
-                console.log(response.data.response)
-            },
-            this.arrayEmail.push(this.randomEmail)
-            
-            )
+                )
+                
+            }
         }
         
     },
     mounted(){
         this.newEmailRandom()
+      
     }
 
+    
+
 })
+

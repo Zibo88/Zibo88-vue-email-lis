@@ -13,8 +13,8 @@
 </head>
 <body>
     <div id="root">
-        <ul>
-            <li v-for="email in arrayEmail" v-if="arrayEmail.length == 10">
+        <ul v-if="arrayEmail.length == 10">
+            <li v-for="email in arrayEmail" >
                {{email}}
                
             </li>

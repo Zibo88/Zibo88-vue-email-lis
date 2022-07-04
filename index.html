@@ -14,7 +14,7 @@
 <body>
     <div id="root">
         <ul>
-            <li v-for="email in arrayEmail">
+            <li v-for="email in arrayEmail" v-if="arrayEmail.length == 10">
                {{email}}
                
             </li>

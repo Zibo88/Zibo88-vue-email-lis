@@ -19,10 +19,10 @@ var app = new Vue ({
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then((response) => {
                     
-                        let thisEmail = [i]
-                        thisEmail = response.data.response
-                        console.log(response.data.response)
-                        this.arrayEmail.push(thisEmail)
+                    let thisEmail = [i]
+                    thisEmail = response.data.response
+                    console.log(response.data.response)
+                    this.arrayEmail.push(thisEmail)
     
                 }
                 )
